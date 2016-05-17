@@ -1,11 +1,12 @@
 export class Operator {
-  operator: String;
+  symbol: String;
+  verb: String;
+  name: String;
 
-  constructor(operator: String) {
-    this.operator = operator;
+  constructor() {
   }
 
   public actOn(a: Number, b: Number) {
-    return eval([a, this.operator, b].join(' '));
+    return eval([a, this.symbol, b].join(' '));
   }
 }

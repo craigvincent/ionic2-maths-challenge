@@ -26,7 +26,9 @@
     "app/pages/page1/page1.ts",
     "app/pages/page2/quizconfig.ts",
     "app/pages/page3/page3.ts",
+    "app/pages/quizconfig/quizconfig.ts",
     "app/pages/tabs/tabs.ts",
+    "app/services/operator.service.ts",
     "app/services/quiz.service.ts",
     "typings/browser.d.ts",
     "typings/browser/ambient/es6-shim/index.d.ts"

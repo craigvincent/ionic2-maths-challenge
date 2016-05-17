@@ -10,24 +10,9 @@
     <ion-list-header>
       Type
     </ion-list-header>
-    <ion-item>
-      <ion-label>Multiplication</ion-label>
-      <ion-radio checked="true" value="multiplication"></ion-radio>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>Division</ion-label>
-      <ion-radio checked="false" value="division"></ion-radio>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>Addition</ion-label>
-      <ion-radio checked="false" value="addition" disabled="true"></ion-radio>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>Subtraction</ion-label>
-      <ion-radio checked="false" value="subtraction" disabled="true"></ion-radio>
+    <ion-item *ngFor="#operator of operators">
+      <ion-label>{{operator.name}}</ion-label>
+      <ion-radio checked="false" value="{{operator.symbol}}" (click)="selectOperator(operator)"></ion-radio>
     </ion-item>
   </ion-list>
   <ion-list radio-group>
@@ -37,11 +22,11 @@
 
     <ion-item *ngFor="#qc of questionCounts">
       <ion-label>{{qc}}</ion-label>
-      <ion-radio checked="false" value="{{qc}}"></ion-radio>
+      <ion-radio checked="false" value="{{qc}}" (click)="selectQuestionCount(qc)"></ion-radio>
     </ion-item>
   </ion-list>
 
-  <button full>
+  <button full *ngIf="selectedOperator && questionCount">
     <ion-icon name="checkmark"></ion-icon>
     Get Started!
   </button>

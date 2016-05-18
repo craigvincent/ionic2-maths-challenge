@@ -23,13 +23,15 @@
     "app/model/Answer.ts",
     "app/model/Operator.ts",
     "app/model/Question.ts",
-    "app/pages/page1/page1.ts",
-    "app/pages/page2/quizconfig.ts",
+    "app/model/QuizType.ts",
     "app/pages/page3/page3.ts",
     "app/pages/quizconfig/quizconfig.ts",
+    "app/pages/quizmain/quizmain.ts",
     "app/pages/tabs/tabs.ts",
     "app/services/operator.service.ts",
     "app/services/quiz.service.ts",
+    "app/services/quizconfig.service.ts",
+    "app/services/quiztype.service.ts",
     "typings/browser.d.ts",
     "typings/browser/ambient/es6-shim/index.d.ts"
   ]

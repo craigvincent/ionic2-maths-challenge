@@ -12,21 +12,24 @@
     </ion-list-header>
     <ion-item *ngFor="#operator of operators">
       <ion-label>{{operator.name}}</ion-label>
-      <ion-radio checked="false" value="{{operator.symbol}}" (click)="selectOperator(operator)"></ion-radio>
+      <ion-radio checked="false" value="{{operator.symbol}}" (tap)="selectOperator(operator)"></ion-radio>
     </ion-item>
   </ion-list>
   <ion-list radio-group>
     <ion-list-header>
-      How many questions?
+      Which challenge do you want to take?
     </ion-list-header>
 
-    <ion-item *ngFor="#qc of questionCounts">
-      <ion-label>{{qc}}</ion-label>
-      <ion-radio checked="false" value="{{qc}}" (click)="selectQuestionCount(qc)"></ion-radio>
+    <ion-item *ngFor="#qt of quizTypes">
+      <ion-label>
+        <h2>{{qt.title}}</h2>
+        <p>{{qt.seconds/60}} minutes, {{qt.questionCount}} questions</p>
+      </ion-label>
+      <ion-radio checked="false" (tap)="selectQuizType(qt)"></ion-radio>
     </ion-item>
   </ion-list>
 
-  <button full *ngIf="selectedOperator && questionCount">
+  <button full *ngIf="selectedOperator && selectedQuizType" (tap)="startQuiz()">
     <ion-icon name="checkmark"></ion-icon>
     Get Started!
   </button>

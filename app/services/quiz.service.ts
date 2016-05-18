@@ -1,17 +1,31 @@
 import { Injectable } from 'angular2/core';
+import { QuizType } from '../model/QuizType';
 import { Question } from '../model/Question.ts';
+import { Answer } from '../model/Answer.ts';
 import { Operator } from '../model/Operator.ts';
 
 @Injectable()
 export class QuizService {
-  getQuestions() {
-    var questions: Question[] = [],
-        multiplication: Operator = new Operator('*');
+  answers: Answer[];
 
-    for (var i=0; i<32; i++) {
-      questions.push(new Question(multiplication, i, i*2));
+  prepareQuiz(quizType: QuizType, operator: Operator) {
+    this.answers = [];
+    for (var i=0; i<quizType.questionCount; i++) {
+      var a = Math.floor(Math.random()*10),
+          b = Math.floor(Math.random()*10);
+      this.answers.push(new Answer(new Question(operator, a, b)));
     }
+  }
 
-    return questions;
+  getQuiz() {
+    return this.answers;
+  }
+
+  getCompletedCount(): Number {
+    return this.answers.filter(a => a.answer != null).length;
+  }
+
+  isCompleted(): Boolean {
+    return this.answers.length == this.getCompletedCount();
   }
 }

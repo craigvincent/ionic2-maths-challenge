@@ -1,6 +1,6 @@
 import {Page} from 'ionic-angular';
-import {Page1} from '../page1/page1';
 import {QuizConfig} from '../quizconfig/quizconfig';
+import {QuizMain} from '../quizmain/quizmain';
 import {Page3} from '../page3/page3';
 
 
@@ -10,7 +10,7 @@ import {Page3} from '../page3/page3';
 export class TabsPage {
   // this tells the tabs component which Pages
   // should be each tab's root Page
-  tab1Root: any = Page1;
   tab2Root: any = QuizConfig;
+  tab1Root: any = QuizMain;
   tab3Root: any = Page3;
 }

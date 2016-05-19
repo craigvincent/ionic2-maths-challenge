@@ -3,7 +3,6 @@ import {Question} from '../../model/Question';
 import {Answer} from '../../model/Answer';
 import {QuizType} from '../../model/QuizType';
 import {Operator} from '../../model/Operator';
-import {QuizConfigService} from '../../services/quizconfig.service';
 import {QuizService} from '../../services/quiz.service';
 
 @Page({
@@ -13,7 +12,7 @@ export class QuizMain {
   currentAnswer: Answer;
   answers: Answer[];
 
-  constructor(private quizConfigService: QuizConfigService, private quizService: QuizService, public nav: NavController) {
+  constructor(private quizService: QuizService, public nav: NavController) {
 
   }
 

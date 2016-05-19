@@ -6,7 +6,25 @@ import { Operator } from '../model/Operator.ts';
 
 @Injectable()
 export class QuizService {
-  answers: Answer[];
+  private operator: Operator;
+  private quizType: QuizType;
+  private answers: Answer[];
+
+  setOperator(o: Operator) {
+    this.operator = o;
+  }
+
+  getOperator(): Operator {
+    return this.operator;
+  }
+
+  setQuizType(qt: QuizType) {
+    this.quizType = qt;
+  }
+
+  getQuizType(): QuizType {
+    return this.quizType;
+  }
 
   prepareQuiz(quizType: QuizType, operator: Operator) {
     this.answers = [];

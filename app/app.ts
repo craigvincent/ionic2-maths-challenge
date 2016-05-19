@@ -7,7 +7,7 @@ import {QuizConfigService} from './services/quizconfig.service';
 import {OperatorService} from './services/operator.service';
 
 @App({
-  providers: [QuizTypeService, QuizConfigService, QuizService, OperatorService],
+  providers: [QuizTypeService, QuizService, OperatorService],
   template: '<ion-nav [root]="rootPage"></ion-nav>',
   config: {} // http://ionicframework.com/docs/v2/api/config/Config/
 })

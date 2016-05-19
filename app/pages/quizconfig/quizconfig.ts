@@ -5,7 +5,6 @@ import {QuizType} from '../../model/QuizType';
 import {OperatorService} from '../../services/operator.service';
 import {QuizTypeService} from '../../services/quiztype.service';
 import {QuizService} from '../../services/quiz.service';
-import {QuizConfigService} from '../../services/quizconfig.service';
 
 @Page({
   templateUrl: 'build/pages/quizconfig/quizconfig.html',
@@ -20,13 +19,11 @@ export class QuizConfig {
   private quizTypeService: QuizTypeService;
   private quizService: QuizService;
   private operatorService: OperatorService;
-  private quizConfigService: QuizConfigService;
   private navController: NavController;
 
-  constructor(quizTypeService: QuizTypeService, operatorService: OperatorService, quizConfigService: QuizConfigService, quizService: QuizService, navController: NavController) {
+  constructor(operatorService: OperatorService, quizTypeService: QuizTypeService, quizService: QuizService, navController: NavController) {
     this.quizTypeService = quizTypeService;
     this.operatorService = operatorService;
-    this.quizConfigService = quizConfigService;
     this.quizService = quizService;
     this.navController = navController;
   }
@@ -38,12 +35,12 @@ export class QuizConfig {
 
   selectOperator(o: Operator) {
     this.selectedOperator = o;
-    this.quizConfigService.setOperator(o);
+    this.quizService.setOperator(o);
   }
 
   selectQuizType(qt: QuizType) {
     this.selectedQuizType = qt;
-    this.quizConfigService.setQuizType(qt);
+    this.quizService.setQuizType(qt);
   }
 
   startQuiz() {

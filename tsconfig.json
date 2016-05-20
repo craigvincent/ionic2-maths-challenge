@@ -19,6 +19,7 @@
     "rewriteTsconfig": false
   },
   "files": [
+    "app/app.spec.ts",
     "app/app.ts",
     "app/model/Answer.ts",
     "app/model/Operator.ts",
@@ -30,8 +31,8 @@
     "app/pages/tabs/tabs.ts",
     "app/services/operator.service.ts",
     "app/services/quiz.service.ts",
-    "app/services/quizconfig.service.ts",
     "app/services/quiztype.service.ts",
+    "test/gulpfile.ts",
     "typings/browser.d.ts",
     "typings/browser/ambient/es6-shim/index.d.ts"
   ]

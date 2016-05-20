@@ -6,7 +6,9 @@ export class Operator {
   constructor() {
   }
 
+  /*
   public actOn(a: Number, b: Number) {
     return eval([a, this.symbol, b].join(' '));
   }
+  */
 }

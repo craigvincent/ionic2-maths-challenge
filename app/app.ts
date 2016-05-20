@@ -3,12 +3,11 @@ import {StatusBar} from 'ionic-native';
 import {TabsPage} from './pages/tabs/tabs';
 import {QuizService} from './services/quiz.service';
 import {QuizTypeService} from './services/quiztype.service';
-import {QuizConfigService} from './services/quizconfig.service';
 import {OperatorService} from './services/operator.service';
 
 @App({
   providers: [QuizTypeService, QuizService, OperatorService],
-  template: '<ion-nav [root]="rootPage"></ion-nav>',
+  template: 'build/app.html',
   config: {} // http://ionicframework.com/docs/v2/api/config/Config/
 })
 export class MathsChallengeApp {

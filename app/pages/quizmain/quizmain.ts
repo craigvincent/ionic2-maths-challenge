@@ -39,6 +39,7 @@ export class QuizMain {
   }
 
   finish() {
+    this.quizService.stop();
     let alert = Alert.create({
       title: 'You\'re at the end!',
       message: 'You\'ve completed all of the questions. Good Work!',

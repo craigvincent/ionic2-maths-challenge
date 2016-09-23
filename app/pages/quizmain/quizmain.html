@@ -5,6 +5,9 @@
 <ion-content padding class="page1">
   <ion-list>
     <ion-item>
+      {{quizService.timer.remaining}}
+    </ion-item>
+    <ion-item>
       <ion-label floating>{{currentAnswer.question.a}} {{currentAnswer.question.operator.symbol}} {{currentAnswer.question.b}} = </ion-label>
       <ion-input type="number" #value></ion-input>
     </ion-item>

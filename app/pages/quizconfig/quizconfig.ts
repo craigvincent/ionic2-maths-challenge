@@ -46,6 +46,7 @@ export class QuizConfig {
   startQuiz() {
     var t: Tabs = this.navController.parent;
     this.quizService.prepareQuiz(this.selectedQuizType, this.selectedOperator);
+    this.quizService.start();
     t.select(1);
   }
 

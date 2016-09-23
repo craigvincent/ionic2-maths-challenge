@@ -5,9 +5,10 @@ import {QuizService} from './services/quiz.service';
 import {QuizTypeService} from './services/quiztype.service';
 import {QuizConfigService} from './services/quizconfig.service';
 import {OperatorService} from './services/operator.service';
+import {TimerFactory} from './services/timer/timer.factory.ts';
 
 @App({
-  providers: [QuizTypeService, QuizService, OperatorService],
+  providers: [QuizTypeService, QuizService, OperatorService, TimerFactory],
   template: '<ion-nav [root]="rootPage"></ion-nav>',
   config: {} // http://ionicframework.com/docs/v2/api/config/Config/
 })
